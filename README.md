@@ -66,6 +66,9 @@ Highlights technologies and domains including:
 ## Work Experience
 Showcases learning experience, projects, frontend development, and cybersecurity exploration.
 
+## Projects Showcase
+Interactive grid with category filters (Frontend, Cybersecurity, Java/DSA, UI/Design), project modals, and a dedicated full-featured `/projects` page route.
+
 ## Education
 Covers academic background, technical learning, and development journey.
 
@@ -86,17 +89,21 @@ Direct links to connect through email, Instagram, and LinkedIn.
 ```bash
 src/
  ├── components/
- │    ├── Hero.jsx
- │    ├── About.jsx
- │    ├── Skills.jsx
- │    ├── GrainOverlay.jsx
- │    ├── Work.jsx
- │    ├── Navigation.jsx
- │    ├── NavLink.jsx
- │    ├── Education.jsx
- │    ├── Writing.jsx
- │    ├── Speaking.jsx
- │    └── Contact.jsx
+ │    ├── Hero.tsx
+ │    ├── About.tsx
+ │    ├── Skills.tsx
+ │    ├── GrainOverlay.tsx
+ │    ├── Work.tsx
+ │    ├── Projects.tsx
+ │    ├── Navigation.tsx
+ │    ├── NavLink.tsx
+ │    ├── Education.tsx
+ │    ├── Writing.tsx
+ │    ├── Speaking.tsx
+ │    └── Contact.tsx
+ ├── pages/
+ │    ├── Index.tsx
+ │    └── ProjectsPage.tsx
  │
  ├── App.jsx
  ├── main.jsx

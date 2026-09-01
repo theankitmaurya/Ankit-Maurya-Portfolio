@@ -1,10 +1,5 @@
 import { motion } from 'framer-motion'
 
-const contacts = [
-  { label: 'SOFTWARE DEVELOPMENT', type: 'work', link: '#' },
-  { label: 'CYBERSECURITY & ETHICAL HACKING', type: 'work', link: '#' },
-]
-
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
@@ -56,31 +51,6 @@ export function Contact() {
             LET'S BUILD SOMETHING CREATIVE TOGETHER
           </p>
         </motion.div>
-
-        {/* Contact Links */}
-        <div className="space-y-0 max-w-2xl">
-          {contacts.map((contact, index) => (
-            <motion.a
-              key={contact.label}
-              href={contact.link}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex items-center justify-between border-t border-gray-800 py-5 md:py-6 group hover:bg-gray-900/30 transition-colors px-4 -mx-4"
-            >
-              <span className="text-sm text-gray-400 tracking-widest">
-                {contact.label}
-              </span>
-
-              <span className="text-gray-500 group-hover:text-white transition-colors">
-                ↗
-              </span>
-            </motion.a>
-          ))}
-
-          <div className="border-t border-gray-800" />
-        </div>
 
         {/* Direct Contact */}
         <motion.div

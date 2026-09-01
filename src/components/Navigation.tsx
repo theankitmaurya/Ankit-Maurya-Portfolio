@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FiMail } from 'react-icons/fi'
-import { FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useScrollVisibility } from '@/hooks/useScrollVisibility'
@@ -10,9 +10,8 @@ const navItems = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'work', label: 'Work' },
+  { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'speaking', label: 'Speaking' },
 ]
 
 const socialLinks = [
@@ -34,6 +33,12 @@ const socialLinks = [
     icon: FaLinkedin,
     color: 'text-blue-500 hover:text-blue-400',
   },
+  {
+  label: 'Github',
+  href: 'https://github.com/theankitmaurya',
+  icon: FaGithub,
+  color: 'text-gray-300 hover:text-white',
+}
 ]
 
 export function Navigation() {

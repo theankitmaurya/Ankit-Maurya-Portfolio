@@ -60,7 +60,7 @@ export function Education() {
                 </p>
 
                 <p className="text-sm text-gray-500">
-                  2024 — Present · CGPA 7.8
+                  2024 — Present · CGPA 8.19
                 </p>
               </div>
             </motion.div>

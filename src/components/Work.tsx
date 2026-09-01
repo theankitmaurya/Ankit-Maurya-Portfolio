@@ -45,21 +45,6 @@ const experiences = [
       'Debugging',
     ],
   },
-  {
-    title: 'Cybersecurity Enthusiast',
-    company: 'Self Learning',
-    location: 'Remote',
-    period: '2026 — Present',
-    description:
-      'Learning ethical hacking concepts, Linux environments, networking basics, and web security fundamentals. Exploring tools and workflows used in penetration testing and vulnerability assessment.',
-    skills: [
-      'Linux',
-      'Networking',
-      'Web Security',
-      'Kali Linux',
-      'System Analysis',
-    ],
-  },
 ]
 
 const fadeInUp = {

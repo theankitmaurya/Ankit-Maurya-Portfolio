@@ -4,11 +4,7 @@ const skills = [
   'Java Development',
   'Data Structures & Algorithms',
   'Frontend Development',
-  'React & Tailwind CSS',
-  'Ethical Hacking',
-  'Cybersecurity',
-  'Linux & WSL',
-  'Game Development',
+  'Python Programming',
   'C Programming',
   'Git & GitHub',
 ]
