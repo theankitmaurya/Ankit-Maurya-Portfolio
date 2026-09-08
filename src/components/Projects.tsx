@@ -1,40 +1,43 @@
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiGithub, FiExternalLink, FiArrowRight, FiX } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import { projectsData, Project } from '@/data/projects'
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiGithub, FiExternalLink, FiArrowRight, FiX } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { projectsData, Project } from "@/data/projects";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.8, ease: 'easeOut' }
-}
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.8, ease: "easeOut" },
+};
 
 const filterTabs = [
-  { id: 'all', label: 'All Projects' },
-  { id: 'saas', label: 'Full Stack / SaaS' },
-] as const
+  { id: "all", label: "All Projects" },
+  { id: "saas", label: "Full Stack / SaaS" },
+  { id: "python", label: "Python" },
+  { id: "ai", label: "AI" },
+] as const;
 
-type FilterId = typeof filterTabs[number]['id']
+type FilterId = (typeof filterTabs)[number]["id"];
 
 export function Projects() {
-  const [activeFilter, setActiveFilter] = useState<FilterId>('all')
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [activeFilter, setActiveFilter] = useState<FilterId>("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filteredProjects = activeFilter === 'all'
-    ? projectsData
-    : projectsData.filter(p => p.category === activeFilter)
+  const filteredProjects =
+    activeFilter === "all"
+      ? projectsData
+      : projectsData.filter((p) => p.category === activeFilter);
 
   // Close modal on Escape key
   useEffect(() => {
-    if (!selectedProject) return
+    if (!selectedProject) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedProject(null)
-    }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [selectedProject])
+      if (e.key === "Escape") setSelectedProject(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProject]);
 
   return (
     <section id="projects" className="section-padding relative">
@@ -53,7 +56,9 @@ export function Projects() {
             {...fadeInUp}
             className="font-display text-[10vw] lg:text-section leading-none tracking-tight text-white"
           >
-            FEATURED<br />PROJECTS
+            FEATURED
+            <br />
+            PROJECTS
           </motion.h2>
 
           <motion.div {...fadeInUp} className="flex items-center">
@@ -68,7 +73,10 @@ export function Projects() {
         </div>
 
         {/* Filter Buttons */}
-        <motion.div {...fadeInUp} className="flex flex-wrap gap-2 md:gap-3 mb-12 border-b border-gray-800 pb-6">
+        <motion.div
+          {...fadeInUp}
+          className="flex flex-wrap gap-2 md:gap-3 mb-12 border-b border-gray-800 pb-6"
+        >
           {filterTabs.map((tab) => (
             <button
               key={tab.id}
@@ -76,8 +84,8 @@ export function Projects() {
               aria-pressed={activeFilter === tab.id}
               className={`px-4 py-2 text-xs md:text-sm tracking-wider uppercase transition-all duration-300 rounded-full border ${
                 activeFilter === tab.id
-                  ? 'bg-white text-black border-white font-medium'
-                  : 'bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white'
+                  ? "bg-white text-black border-white font-medium"
+                  : "bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white"
               }`}
             >
               {tab.label}
@@ -88,7 +96,7 @@ export function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredProjects.map((project, index) => {
-            const Icon = project.icon
+            const Icon = project.icon;
             return (
               <motion.article
                 key={project.id}
@@ -147,12 +155,14 @@ export function Projects() {
 
                   {/* Action Link */}
                   <div className="flex items-center justify-between pt-4 border-t border-gray-800/60 text-xs text-gray-400 group-hover:text-white transition-colors">
-                    <span className="uppercase tracking-wider text-[11px]">View Details</span>
+                    <span className="uppercase tracking-wider text-[11px]">
+                      View Details
+                    </span>
                     <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </motion.article>
-            )
+            );
           })}
         </div>
 
@@ -207,7 +217,10 @@ export function Projects() {
                   </h4>
                   <ul className="space-y-2">
                     {selectedProject.highlights.map((item, i) => (
-                      <li key={i} className="text-sm text-gray-400 flex items-start gap-2">
+                      <li
+                        key={i}
+                        className="text-sm text-gray-400 flex items-start gap-2"
+                      >
                         <span className="text-gray-600 font-bold">•</span>
                         <span>{item}</span>
                       </li>
@@ -244,7 +257,7 @@ export function Projects() {
                       <FiGithub size={14} /> Source Code
                     </a>
                   )}
-                  {selectedProject.demo && selectedProject.demo !== '#' && (
+                  {selectedProject.demo && selectedProject.demo !== "#" && (
                     <a
                       href={selectedProject.demo}
                       target="_blank"
@@ -261,5 +274,5 @@ export function Projects() {
         </AnimatePresence>
       </div>
     </section>
-  )
+  );
 }

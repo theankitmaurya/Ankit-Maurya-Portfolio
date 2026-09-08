@@ -1,11 +1,11 @@
 import { IconType } from "react-icons";
-import { FiLayers, FiFileText } from "react-icons/fi";
+import { FiLayers, FiFileText, FiShield } from "react-icons/fi";
 
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: "saas" | "ai" | "extension" | "web" | "dsa";
+  category: "saas" | "ai" | "extension" | "web" | "dsa" | "python";
   categoryLabel: string;
   description: string;
   longDescription: string;
@@ -72,5 +72,35 @@ export const projectsData: Project[] = [
     featured: true,
     year: "2026",
     icon: FiFileText,
+  },
+  {
+    id: "website-blocker",
+    title: "Website Blocker",
+    subtitle: "Privacy-Focused Website Blocking Desktop App",
+    category: "python",
+    categoryLabel: "Desktop / Productivity / Python",
+    description:
+      "Lightweight desktop app that blocks distracting websites to improve productivity and control web access.",
+    longDescription:
+      "Website Blocker is a lightweight desktop app for blocking distracting or unwanted websites, focused on productivity, privacy, and easy access control.",
+    highlights: [
+      "Block distracting and unwanted websites",
+      "Manage and customize blocked website domains",
+      "Lightweight desktop application with a simple user interface",
+      "Privacy-focused website access control without relying on third-party tracking",
+      "Designed for reliable background website blocking",
+    ],
+    tags: [
+      "Python",
+      "Desktop App",
+      "Website Blocking",
+      "Productivity",
+      "Networking",
+    ],
+    github: "https://github.com/theankitmaurya/website-blocker",
+    demo: "#",
+    featured: true,
+    year: "2026",
+    icon: FiShield,
   },
 ];

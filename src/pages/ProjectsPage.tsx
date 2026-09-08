@@ -132,6 +132,8 @@ export default function ProjectsPage() {
             {[
               { id: 'all', label: 'All Projects' },
               { id: 'saas', label: 'Full Stack / SaaS' },
+              {id: 'python', label: 'Python'},
+              {id: 'ai', label: 'AI'},
             ].map((cat) => (
               <button
                 key={cat.id}
